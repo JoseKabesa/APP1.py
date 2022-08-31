@@ -1,0 +1,35 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import streamlit as st
+import plotly.graph_objects as go
+
+
+t = np.linspace(0, 0.05, 100)
+v = np.sqrt(2)*220*np.sin(2*np.pi*60*t)
+fig1 = go.Figure(data=go.Scatter(x=t, y=v))
+fig2, ax = plt.subplots()
+ax.plot(t, v)
+
+st.markdown("# Título 1")
+st.markdown("Simples")
+st.pyplot(fig2)
+st.markdown("Bonito Igual a Josh")
+st.plotly_chart(fig1)
+st.markdown("## Título 2")
+st.markdown("### Título 3")
+plt.grid()
+
+media = np.mean(v)
+print("o valor da media é: {}".format(media))
+
+# y = v**2
+#plt.plot(t, y)
+#plt.grid()
+#plt.xlabel('$t$')
+#plt.ylabel('v')
+#plt.title('Funtion 2')
+#media2 = np.mean(y)
+#print(media2)
+
+#root = np.sqrt(media2)
+#print(root)
